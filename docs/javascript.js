@@ -1,8 +1,5 @@
 var map;
 
-function myFunction() {
-    alert("I am an alert box!");
-}
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 2,
@@ -48,7 +45,7 @@ var pieChart = new CanvasJS.Chart("pieChart", {
 	exportEnabled: true,
 	animationEnabled: true,
 	title:{
-		text: "State Operating Funds"
+		text: "Pie chart"
 	},
 	legend:{
 		cursor: "pointer",
@@ -78,7 +75,7 @@ var barChart = new CanvasJS.Chart("barChart", {
 	animationEnabled: true,
 	
 	title:{
-		text:"Fortune 500 Companies by Country"
+		text:"Data chart"
 	},
 	axisX:{
 		interval: 1
@@ -135,3 +132,44 @@ $('#myButton').on('click', function () {
     // business logic...
     $btn.button('reset')
 })
+//
+//function getData(start, end) {
+//    var startArray = start.split("-")
+//    var currentYear = parseInt(startArray[0])
+//    var currentMonth = parseInt(startArray[1])
+//    
+//    var endArray = end.split("-")
+//    var endYear = parseInt(endArray[0])
+//    var endMonth = parseInt(endArray[1])
+//    var data;
+//	
+//    while (!(currentYear == endYear && currentMonth != endMonth)) {
+//        
+//	$(document).ready(function(){
+//	  $.ajax({
+//		type:"get",
+//		//avoid hardcoding the URL since we need more options from the Longitude, Latitude and Date
+//		url:"https://data.police.uk/api/crimes-street/all-crime?poly="+urlString1+":"+urlString2+":"+urlString3+"&date="+date,
+//		success: function(data){
+//		result="";
+//
+//		for(i in data)  
+//		{	
+//		  <!-- Specifying the category to only "violent-crime" -->
+//			if(data[i].category=="violent-crime")
+//			{
+//				result+="Category: "+data[i].category+"  Latitude: "+data[i].location.latitude+"  Longitude: "+data[i].location.longitude+"  Date: "+data[i].month+"<br>";
+//			}
+//
+//			$("#list").html(result);
+//		}
+//	  });
+//	});
+//
+//		if (currentMonth == 12) {
+//            currentYear++
+//        } else {
+//            currentMonth++
+//        }
+//    }
+//}
