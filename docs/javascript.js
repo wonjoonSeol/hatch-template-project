@@ -1,5 +1,6 @@
-var map;
 
+// Google Map API
+var map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 2,
@@ -23,6 +24,7 @@ function initMap() {
   });
 }
 
+// Draw red circles on Google Map
 function getCircle(magnitude) {
   return {
     path: google.maps.SymbolPath.CIRCLE,
@@ -34,18 +36,18 @@ function getCircle(magnitude) {
   };
 }
 
+// Call geolocation json - this is for testing
 function eqfeed_callback(results) {
   map.data.addGeoJson(results);
 }
 
-//Pie chart
-
+// Draw Pie chart when webpage is created
 window.onload = function () {
 var pieChart = new CanvasJS.Chart("pieChart", {
 	exportEnabled: true,
 	animationEnabled: true,
 	title:{
-		text: "Regional sexual assault chart"
+		text: "Regional sexual assault chart 2017"
 	},
 	legend:{
 		cursor: "pointer",
@@ -69,13 +71,12 @@ var pieChart = new CanvasJS.Chart("pieChart", {
 });
 pieChart.render();
     
-    // bar chart
-    
+// bar chart    
 var barChart = new CanvasJS.Chart("barChart", {
 	animationEnabled: true,
 	
 	title:{
-		text:"International sexual assualt status"
+		text:"International sexual assualt status 2017"
 	},
 	axisX:{
 		interval: 1
@@ -116,6 +117,7 @@ barChart.render();
     
 }
 
+// pie chart aux function
 function explodePie (e) {
 	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
 		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
@@ -126,6 +128,7 @@ function explodePie (e) {
 
 }
 
+// currently working - clicking button function
 function switchOn(id) {
     var x = document.getElementById(id);
 	if (x.style.display == '') {
@@ -140,6 +143,7 @@ function switchOn(id) {
 	}
 }
 
+// News API
 var url = 'https://newsapi.org/v2/everything?' +
           'q=sexual+assault&' +
           'sortBy=popularity&' +
@@ -152,6 +156,7 @@ var data = fetch(req)
         console.log(response.json());
     })
 
+// I am trying to parse News Json and output as a dynamic table
  var r = new Array(), j = -1;
  for (var key=0, size=data.length; key<size; key++){
      r[++j] ='<tr><td>';

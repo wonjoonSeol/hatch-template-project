@@ -61,3 +61,17 @@ footer {
 .upload {
     margin-left : -15px;
 }
+
+.jumbotron {
+	width : 69%;
+	display : inline-block;
+	margin : 0;
+}
+.twitter {
+	display : inline-block;
+	float : right;
+}
+
+.gap {
+	margin-bottom= 150px;
+}
