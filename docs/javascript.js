@@ -57,13 +57,13 @@ var pieChart = new CanvasJS.Chart("pieChart", {
 		toolTipContent: "{name}: <strong>{y}%</strong>",
 		indexLabel: "{name} - {y}%",
 		dataPoints: [
-			{ y: 26, name: "School Aid", exploded: true },
-			{ y: 20, name: "Medical Aid" },
-			{ y: 5, name: "Debt/Capital" },
-			{ y: 3, name: "Elected Officials" },
-			{ y: 7, name: "University" },
-			{ y: 17, name: "Executive" },
-			{ y: 22, name: "Other Local Assistance"}
+			{ y: 26, name: "London", exploded: true },
+			{ y: 20, name: "Brighton" },
+			{ y: 5, name: "Leeds" },
+			{ y: 3, name: "etc" },
+			{ y: 7, name: "Birmingham" },
+			{ y: 17, name: "Manchester" },
+			{ y: 22, name: "Surrey"}
 		]
 	}]
 });
@@ -83,11 +83,11 @@ var barChart = new CanvasJS.Chart("barChart", {
 	axisY2:{
 		interlacedColor: "rgba(1,77,101,.2)",
 		gridColor: "rgba(1,77,101,.1)",
-		title: "Number of Companies"
+		title: "Sexual assults"
 	},
 	data: [{
 		type: "bar",
-		name: "companies",
+		name: "Countries",
 		axisYType: "secondary",
 		color: "#014D65",
 		dataPoints: [
@@ -127,11 +127,12 @@ function explodePie (e) {
 }
 
 // query button
-$('#myButton').on('click', function () {
-    var $btn = $(this).button('loading')
-    // business logic...
-    $btn.button('reset')
-})
+//$('#myButton').on('click', function () {
+//    var $btn = $(this).button('loading')
+//    // business logic...
+//    $btn.button('reset')
+//})
+
 //
 //function getData(start, end) {
 //    var startArray = start.split("-")
