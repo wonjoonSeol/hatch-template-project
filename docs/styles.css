@@ -63,16 +63,20 @@ footer {
 }
 
 .jumbotron {
-	width : 69%;
-	display : inline-block;
 	margin : 0;
 }
 
-.twitter {
+.jumbo-contents {
 	display : inline-block;
-	float : right;
+	width : 67%;
 }
 
+.twitter {
+	display : inline;
+	float :right;
+	margin-right : -30px;
+	margin-top : -65px;
+}
 .gap {
-	margin-bottom= 150px;
+	margin-bottom : 100px;
 }
