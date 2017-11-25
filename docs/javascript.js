@@ -126,6 +126,33 @@ function explodePie (e) {
 
 }
 
+function switchOn(id) {
+    var x = document.getElementById(id);
+	if (x.style.display == '') {
+		x.style.display = 'inline-block';
+		if (term == 1) {
+			term1 += 1;
+			issueWarning();
+		} else if (term == 2) {
+			term2 += 1;
+			issueWarning();
+		}
+	}
+}
+
+var url = 'https://newsapi.org/v2/everything?' +
+          'q=sexual+assault&' +
+          'sortBy=popularity&' +
+          'apiKey=13023a411421424eb2a9c64bcefb2d62';
+
+var req = new Request(url);
+
+fetch(req)
+    .then(function(response) {
+        console.log(response.json());
+    })
+
+
 // query button
 //$('#myButton').on('click', function () {
 //    var $btn = $(this).button('loading')
