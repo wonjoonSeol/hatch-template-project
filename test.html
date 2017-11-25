@@ -13,10 +13,14 @@ $(document).ready(function(){
     success: function(data){
     result="";
 
-    for(i in data){	
-
-    	result+="Category: "+data[i].category+"  Latitude: "+data[i].location.latitude+"  Longitude: "+data[i].location.longitude+"<br>";
+    for(i in data)  
+    {	
+      <!-- Specifying the category to only "violent-crime" -->
+    	if(data[i].category=="violent-crime")
+    	{
+    		result+="Category: "+data[i].category+"  Latitude: "+data[i].location.latitude+"  Longitude: "+data[i].location.longitude+"  Date: "+data[i].month+"<br>";
     	}
+
     	$("#list").html(result);
     }
   });
