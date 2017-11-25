@@ -43,3 +43,13 @@ footer {
 	overflow:scroll;
 }
 */
+
+.button-wrapper {
+    width: 200px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.upload {
+    margin-left : -15px;
+}

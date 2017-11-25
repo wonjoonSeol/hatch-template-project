@@ -43,9 +43,43 @@
 <div class="jumbotron">
   <h1 class="display-3"> Sexual harassment data </h1>
   <p class="lead">This website allows you .... </p> <hr class="my-4">
-  <p>Select locations or government projects</p>
-</div>
+  <p>Specify dates : </p>
     
+<div class = "button-wrapper">
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Start</span>
+  <input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="basic-addon1">
+</div>
+</div>
+<div class = "button-wrapper">
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon2">End</span>
+  <input type="text" class="form-control" placeholder="dd/mm/yyyy" aria-describedby="basic-addon1">    
+</div>    
+</div>
+
+<div class = "button-wrapper">
+<button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+Query
+</button>    
+</div>
+
+    
+<!--    Add category tab-->
+    
+<br><br>    
+<p>Upload your own file : </p>
+<div class = "upload">
+    <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="File url : ">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Upload</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div>
+</div>
 
 <div id="pieChart" style="height: 300px; width: 40%;"></div>    
 <br>
