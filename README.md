@@ -1,4 +1,4 @@
-# hatch-template-project - replace with your project name
+# Effective Intervention
 
 This template project should be forked by hatch teams.
 
@@ -37,7 +37,7 @@ From now on it is in your **Forked** repo
 
 Include all members of your team for the hack here:
 
-* Full Name [github](link to github profile)
+* Wonjoon Seol https://github.com/wonjoonSeol/
 * Full Name [github](link to github profile)
 * Full Name [github](link to github profile)
 * Full Name [github](link to github profile)
