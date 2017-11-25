@@ -147,11 +147,22 @@ var url = 'https://newsapi.org/v2/everything?' +
 
 var req = new Request(url);
 
-fetch(req)
+var data = fetch(req)
     .then(function(response) {
         console.log(response.json());
     })
 
+ var r = new Array(), j = -1;
+ for (var key=0, size=data.length; key<size; key++){
+     r[++j] ='<tr><td>';
+     r[++j] = data[key][0];
+     r[++j] = '</td><td cope="col">';
+     r[++j] = data[key][1];
+     r[++j] = '</td><td scope="col">';
+     r[++j] = data[key][2];
+     r[++j] = '</td></tr>';
+ }
+ $('#dataTable').html(r.join('')); 
 
 // query button
 //$('#myButton').on('click', function () {
