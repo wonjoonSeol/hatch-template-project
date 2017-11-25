@@ -17,7 +17,8 @@ $(document).ready(function(){
     type:"get",
     //avoid hardcoding the URL since we need more options from the Longitude, Latitude and Date
     url:"https://data.police.uk/api/crimes-street/all-crime?poly="+urlString1+":"+urlString2+":"+urlString3+"&date="+date,
-    success: function(data){
+    success: function(data)
+    {
     result="";
 
     for(i in data)  
@@ -29,6 +30,7 @@ $(document).ready(function(){
     	}
 
     	$("#list").html(result);
+    }
     }
   });
 });
