@@ -45,7 +45,7 @@ var pieChart = new CanvasJS.Chart("pieChart", {
 	exportEnabled: true,
 	animationEnabled: true,
 	title:{
-		text: "Pie chart"
+		text: "International sexual assault status"
 	},
 	legend:{
 		cursor: "pointer",
@@ -75,7 +75,7 @@ var barChart = new CanvasJS.Chart("barChart", {
 	animationEnabled: true,
 	
 	title:{
-		text:"Data chart"
+		text:"Regional sexual assualt chart"
 	},
 	axisX:{
 		interval: 1

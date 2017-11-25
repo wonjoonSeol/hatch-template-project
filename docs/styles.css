@@ -43,6 +43,14 @@ footer {
 	overflow:scroll;
 }
 */
+#pieChart {
+	display : inline-block;
+	margin-right: 10px;
+}
+
+#barChart {
+	display : inline-block;
+}
 
 .button-wrapper {
     width: 200px;
