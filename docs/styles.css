@@ -63,10 +63,11 @@ footer {
 }
 
 .jumbotron {
-	width : 68%;
+	width : 69%;
 	display : inline-block;
 	margin : 0;
 }
+
 .twitter {
 	display : inline-block;
 	float : right;
