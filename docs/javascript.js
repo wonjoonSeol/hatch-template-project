@@ -1,9 +1,12 @@
+var map;
+var geocoder;
+
 function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         zoom: 8,
         center: {lat: 40.72, lng: -73.96}
     });
-    var geocoder = new google.maps.Geocoder();
+    geocoder = new google.maps.Geocoder();
 
     setTimeout( function() {
         var fro = getLatLng(geocoder,'London');
