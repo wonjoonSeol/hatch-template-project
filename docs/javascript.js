@@ -41,8 +41,22 @@
 //}
 
 
+
+
 var map,heatmap;
 // this is the function to preview the map and the heatmap
+
+function initaliseNewMap() {
+	var london = new google.maps.LatLng(51.5074, 0.1278);
+
+	map = new google.maps.Map(document.getElementById('map'), {
+	center: london,
+	zoom: 9,
+	mapTypeId: 'satellite'
+	});	
+}
+
+
 function initMap(array) {
 	var london = new google.maps.LatLng(51.5074, 0.1278);
 
@@ -51,18 +65,16 @@ function initMap(array) {
 	zoom: 9,
 	mapTypeId: 'satellite'
 	});
-
-	if(array != null) {
-		// using data in getPoints() to generate heatmap
-		heatmap = new google.maps.visualization.HeatmapLayer({
-		data: array,
-		map: map
-		});
-	}
+	
+	heatmap = new google.maps.visualization.HeatmapLayer({
+	data: array,
+	map: map
+	});
 }  
 
+
 function initURL(urlString1,urlString2,urlString3,date) {
-  var requestURL = "https://data.police.uk/api/crimes-street/all-crime?poly="+urlString1+":"+urlString2+":"+urlString3+"&date="+date;
+var requestURL = "https://data.police.uk/api/crimes-street/all-crime?poly="+urlString1+":"+urlString2+":"+urlString3+"&date="+date;
   var request = new XMLHttpRequest();
   request.open('GET', requestURL);
   request.responseType = 'json';
@@ -128,7 +140,7 @@ var barChart = new CanvasJS.Chart("barChart", {
 	axisY2:{
 		interlacedColor: "rgba(1,77,101,.2)",
 		gridColor: "rgba(1,77,101,.1)",
-		title: "Cost"
+		title: "Cost in $"
 	},
 	data: [{
 		type: "bar",
@@ -161,6 +173,21 @@ function explodePie (e) {
 	e.chart.render();
 
 }
+
+d3.text("data.csv", function(data) {
+    var parsedCSV = d3.csvParseRows(data);
+    var container = d3.select("#data-input")
+        .append("table")
+
+        .selectAll("tr")
+        .data(parsedCSV).enter()
+        .append("tr")
+
+        .selectAll("td")
+        .data(function(d) { return d; }).enter()
+        .append("td")
+        .text(function(d) { return d; });
+});
 
 //// News API
 //var url = 'https://newsapi.org/v2/everything?' +
