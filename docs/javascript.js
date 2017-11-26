@@ -10,7 +10,7 @@ function initMap() {
     mapTypeId: 'terrain'
   });
 
-  geocoder = new google.maps.Geocoder;
+  geocoder = new google.maps.Geocoder();
 
 	document.getElementById('input').addEventListener('click', function() {
         geocodePlaceId(geocoder);
@@ -180,6 +180,7 @@ var data = fetch(req)
 function geocodePlaceId(geocoder) {
 
     var placeId = document.getElementById('location-input').value;
+    console.log(placeId);
 
     geocoder.geocode({'address': placeId}, function(results, status) {
 
