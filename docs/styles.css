@@ -116,6 +116,9 @@ table {
 	font: 12px sans-serif;
 }
 
+#table {
+	width: 900px;
+}
 
 tr:nth-child(even){background-color: #f2f2f2}
 
