@@ -6,12 +6,12 @@ function initMap() {
         zoom: 8,
         center: {lat: 40.72, lng: -73.96}
     });
-    geocoder = new google.maps.Geocoder();
 
-    setTimeout( function() {
-        var fro = getLatLng(geocoder,'London');
-        var me = new google.maps.LatLng(fro);
-        console.log(me); }, 5000);
+    geocoder = new google.maps.Geocoder;
+
+    document.getElementById('input').addEventListener('click', function() {
+        geocodePlaceId(geocoder);
+    });
 }
 
 // Draw red circles on Google Map
