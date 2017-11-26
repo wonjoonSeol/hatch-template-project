@@ -2,7 +2,7 @@ var map,heatmap;
 // this is the function to preview the map and the heatmap
 
 function initaliseNewMap() {
- initURL("51.5438,-0.139","251.5016,-0.2133","51.5,-0.0583","2016-1");
+ initURL("51.5438,-0.139","51.5016,-0.2133","51.5,-0.0583","2016-1");
 }
 
 
