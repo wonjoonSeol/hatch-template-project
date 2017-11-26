@@ -1,18 +1,27 @@
 var map;
-var geocoder;
+//urlString1,urlString2,urlString3,date
+function initMap(urlString1,urlString2,urlString3,date) {
+alert(urlString1);	
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 2,
+    center: {lat: -33.865427, lng: 151.196123},
+    mapTypeId: 'terrain'
+  });
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
-        center: {lat: 40.72, lng: -73.96}
-    });
+  // Create a <script> tag and set the USGS URL as the source.
+  var script = document.createElement('script');
+//  script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';	
 
-  geocoder = new google.maps.Geocoder();
+  script.src = "https://data.police.uk/api/crimes-street/all-crime?poly="+urlString1+":"+urlString2+":"+urlString3+"&date="+date;
+	
+  document.getElementsByTagName('head')[0].appendChild(script);
 
-
-    document.getElementById('input').addEventListener('click', function() {
-        geocodePlaceId(geocoder);
-    });
+  map.data.setStyle(function(feature) {
+    var magnitude = 5;
+    return {
+      icon: getCircle(magnitude)	
+    };
+  });
 }
 
 // Draw red circles on Google Map
@@ -27,10 +36,11 @@ function getCircle(magnitude) {
   };
 }
 
-// Call geolocation json - this is for testing
+// Call geolocation json
 function eqfeed_callback(results) {
   map.data.addGeoJson(results);
 }
+
 
 // Draw Pie chart when webpage is created
 window.onload = function () {
@@ -119,21 +129,6 @@ function explodePie (e) {
 
 }
 
-// currently working - clicking button function
-function switchOn(id) {
-    var x = document.getElementById(id);
-	if (x.style.display == '') {
-		x.style.display = 'inline-block';
-		if (term == 1) {
-			term1 += 1;
-			issueWarning();
-		} else if (term == 2) {
-			term2 += 1;
-			issueWarning();
-		}
-	}
-}
-
 //// News API
 //var url = 'https://newsapi.org/v2/everything?' +
 //          'q=sexual+assault&' +
@@ -160,27 +155,62 @@ function switchOn(id) {
 // }
 // $('#dataTable').html(r.join(''));
 
-function geocodePlaceId(geocoder) {
-
-    var placeId = document.getElementById('location-input').value;
-    console.log(placeId);
-
-    geocoder.geocode({'address': placeId}, function(results, status) {
-
-        if (status === 'OK') {
-
-            if (results[0]) {
-
-                console.log(results[0].geometry.location.lat());
-
-            } else {
-                window.alert('No results found');
-            }
-        } else {
-            window.alert('Geocoder failed due to: ' + status);
-        }
-    });
-}
+//function geocodePlaceId(geocoder) {
+//
+//    var placeId = document.getElementById('location-input1').value;
+//
+//    geocoder.geocode({'address': placeId}, function(results, status) {
+//
+//        if (status === 'OK') {
+//
+//            if (results[0]) {
+//
+//                console.log(results[0].geometry.location.lat());
+//
+//            } else {
+//                window.alert('No results found');
+//            }
+//        } else {
+//            window.alert('Geocoder failed due to: ' + status);
+//        }
+//    });
+//	
+//    var placeId = document.getElementById('location-input2').value;
+//
+//    geocoder.geocode({'address': placeId}, function(results, status) {
+//
+//        if (status === 'OK') {
+//
+//            if (results[0]) {
+//
+//                console.log(results[0].geometry.location.lat());
+//
+//            } else {
+//                window.alert('No results found');
+//            }
+//        } else {
+//            window.alert('Geocoder failed due to: ' + status);
+//        }
+//    });	
+//	
+//    var placeId = document.getElementById('location-input3').value;
+//
+//    geocoder.geocode({'address': placeId}, function(results, status) {
+//
+//        if (status === 'OK') {
+//
+//            if (results[0]) {
+//
+//                console.log(results[0].geometry.location.lat());
+//
+//            } else {
+//                window.alert('No results found');
+//            }
+//        } else {
+//            window.alert('Geocoder failed due to: ' + status);
+//        }
+//    });	
+//}
 
 // query button
 //$('#myButton').on('click', function () {
