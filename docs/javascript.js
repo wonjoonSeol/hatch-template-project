@@ -2,7 +2,13 @@ var map,heatmap;
 // this is the function to preview the map and the heatmap
 
 function initaliseNewMap() {
- initURL("51.5438,-0.139","51.5016,-0.2133","51.5,-0.0583","2016-1");
+	var london = new google.maps.LatLng(51.5074, 0.1278);	
+	map = new google.maps.Map(document.getElementById('map'), {
+	center: london,
+	zoom: 11,
+	mapTypeId: 'satellite'
+	});
+ initURL("51.5438,-0.1399","51.5016,-0.2133","51.5,-0.0583","2016-1");
 }
 
 
