@@ -90,6 +90,10 @@ footer {
 	margin-top : -3.7%;	
 }
 
+.form-group {
+	display : inline-block;
+	margin-right : 20px;
+}
 
 .gap {
 	margin-bottom: 150px;
