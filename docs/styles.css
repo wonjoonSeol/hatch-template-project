@@ -82,3 +82,27 @@ footer {
 .gap {
 	margin-bottom: 150px;
 }
+
+#location-selector {
+	margin: 2% 0 5% 20%;
+}
+
+.display-3 {
+	font-size: 3vw !important;
+	font-family: Cairo;
+	margin: 0 !important;
+}
+
+.introduction {
+	font-family: Lato;
+	font-size: 1.6vw;
+
+}
+
+#time-input {
+	margin: 1% 0 3% 0;
+}
+
+.jumbotron {
+	background-color: #e1e1f5;
+}
