@@ -1,6 +1,6 @@
 # Effective Intervention
 
-This template project should be forked by hatch teams.
+We use data-driven approaches to help you understand how effective your interventions to reduce sexual harassment and gender discrimination are. Or maybe you want to offer your help and skills in areas where resources are not used effectively to reduce the issues. Just come to us and we'll use our best stats to help you out.
 
 This project was developed during [hatchlondon 2017](http://hatchlondon.io).
 
@@ -8,13 +8,11 @@ This project was developed during [hatchlondon 2017](http://hatchlondon.io).
 
 Tick items off as you go along.
 
-- [ ] 1. [Sign up](https://help.github.com/articles/signing-up-for-a-new-github-account/) for a free GitHub account
-- [ ] 2. [Fork](https://help.github.com/articles/fork-a-repo/) this project
-- [ ] 3. Add your forked repo from `step 2` to this [project](https://github.com/SheCanCodeHQ/hatchlondon-2017-projects) as a [Pull Request](https://help.github.com/articles/about-pull-requests/)
+- [ x] 1. [Sign up](https://help.github.com/articles/signing-up-for-a-new-github-account/) for a free GitHub account
+- [ x] 2. [Fork](https://help.github.com/articles/fork-a-repo/) this project
+- [ x] 3. Add your forked repo from `step 2` to this [project](https://github.com/SheCanCodeHQ/hatchlondon-2017-projects) as a [Pull Request](https://help.github.com/articles/about-pull-requests/)
 
 ### Project setup
-
-From now on it is in your **Forked** repo
 
 - [ ] 4. At the top of your **repo** add a brief project description & link to where it is hosted.
 
@@ -24,8 +22,8 @@ From now on it is in your **Forked** repo
 
 ### README changes (this file)
 
-- [ ] 5. Change the name at the top of this file on `line 1`
-- [ ] 6. Under the name of this project put a brief description of the project `line 3` (this can be more detailed than `step 4`)
+- [x] 5. Change the name at the top of this file on `line 1`
+- [x] 6. Under the name of this project put a brief description of the project `line 3` (this can be more detailed than `step 4`)
 - [ ] 7. Fill in your team members in the **TEAM** section below
 - [ ] 8. Fill in the **PROBLEM AND SOLUTION** section below
 - [ ] 9. Fill in the **INSTALL AND RUN THIS PROJECT** section below
@@ -37,14 +35,15 @@ From now on it is in your **Forked** repo
 
 Include all members of your team for the hack here:
 
-* Wonjoon Seol https://github.com/wonjoonSeol/
-* Full Name [github](link to github profile)
-* Full Name [github](link to github profile)
-* Full Name [github](link to github profile)
+* Wonjoon https://github.com/wonjoonSeol/
+* Florin https://github.com/darksipu/
+* Izabela
+* Alvina
+* Hasan
 
 ## Problem and Solution
 
-Describe here which problem you are working on during the event, and what your solution is, succinctly.
+Organisations, governments, companies and charities implement interventions to reduce gender discrimination and sexual harassment. But how well do they assess their effectiveness? We provide an online platform to present a data-driven analysis of incidents of gender discrimination and sexual harassment, coupled with data about the interventions implemented. You can use it to see if your interventions achieved their aims, optimize for the future and contribute to a community that aims to eradicate gender inequality.
 
 ## Install and run this project
 
