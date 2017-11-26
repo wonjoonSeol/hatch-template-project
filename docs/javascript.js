@@ -10,7 +10,7 @@ function initMap(array) {
 	var london = new google.maps.LatLng(51.5074, 0.1278);	
 	map = new google.maps.Map(document.getElementById('map'), {
 	center: london,
-	zoom: 9,
+	zoom: 11,
 	mapTypeId: 'satellite'
 	});
 	
