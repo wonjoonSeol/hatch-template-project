@@ -177,7 +177,26 @@ var data = fetch(req)
  }
  $('#dataTable').html(r.join(''));
 
+function geocodePlaceId(geocoder) {
 
+    var placeId = document.getElementById('location-input').value;
+
+    geocoder.geocode({'address': placeId}, function(results, status) {
+
+        if (status === 'OK') {
+
+            if (results[0]) {
+
+                console.log(results[0].geometry.location.lat());
+
+            } else {
+                window.alert('No results found');
+            }
+        } else {
+            window.alert('Geocoder failed due to: ' + status);
+        }
+    });
+}
 // query button
 //$('#myButton').on('click', function () {
 //    var $btn = $(this).button('loading')
