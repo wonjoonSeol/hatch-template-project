@@ -1,12 +1,20 @@
 
 // Google Map API
 var map;
+var geocoder;
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 2,
     center: {lat: -33.865427, lng: 151.196123},
     mapTypeId: 'terrain'
   });
+
+  geocoder = new google.maps.Geocoder;
+
+	document.getElementById('input').addEventListener('click', function() {
+        geocodePlaceId(geocoder);
+    });
 
   // Create a <script> tag and set the USGS URL as the source.
   var script = document.createElement('script');
@@ -167,7 +175,8 @@ var data = fetch(req)
      r[++j] = data[key][2];
      r[++j] = '</td></tr>';
  }
- $('#dataTable').html(r.join('')); 
+ $('#dataTable').html(r.join(''));
+
 
 // query button
 //$('#myButton').on('click', function () {

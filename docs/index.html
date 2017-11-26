@@ -38,47 +38,56 @@
 <main role="main">
 <div class="head-space"></div>
 <main role="main">
+
 <article role="article">
 
-<div class="jumbotron">
-  <h1 class="display-3"> Effective Interventions</h1>
-  <p class="lead">This website allows comparison of your provided data and national crime statistics to see whether policy is effective in regions in UK</p> <hr class="my-4">
-  <p>Specify dates : </p>
-    
-<div class = "button-wrapper">
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Start</span>
-  <input type="text" class="form-control" placeholder="yyyy-mm" aria-describedby="basic-addon1">
-</div>
-</div>
-<div class = "button-wrapper">
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon2">End</span>
-  <input type="text" class="form-control" placeholder="yyyy-mm" aria-describedby="basic-addon1">    
-</div>    
-</div>
+  <div class="jumbotron">
+    <h1 class="display-3"> Effective Interventions</h1>
+    <p class="lead">We allow you to comparise of your provided data and national crime statistics to see whether policy is effective in regions in UK</p> <hr class="my-4">
 
-<div class = "button-wrapper">
-<button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
-Query
-</button>    
-</div>
-	
-<!--    Add category tab-->
-    
-<br><br>    
-<p>Upload your own <i>.csv</i> file : </p>
-<div class = "upload">
-    <div class="col-lg-6">
+    <div class="form-group">
+      <div class="col-xs-2">
+        <label for="location-input">Location</label>
+        <input type="text" class="form-control" id="location-input">
+      </div>
+    </div>
+
+    <p>Specify dates:</p>
+
+    <div class = "button-wrapper">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Start</span>
+        <input type="text" class="form-control" placeholder="yyyy-mm" aria-describedby="basic-addon1">
+      </div>
+    </div>
+
+    <div class = "button-wrapper">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="File url : ">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Upload</button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-</div>
-</div>
+      <span class="input-group-addon" id="basic-addon2">End</span>
+      <input type="text" class="form-control" placeholder="yyyy-mm" aria-describedby="basic-addon1">
+    </div>
+    </div>
+
+    <div class = "button-wrapper">
+    <button type="button" id="input" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+    Query
+    </button>
+    </div>
+
+<!--    Add category tab-->
+
+  <p>Upload your own <i>.csv</i> file : </p>
+  <div class = "upload">
+      <div class="col-lg-6">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="File url : ">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Upload</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </div>
+  </div>
 
 <div class = "twitter" >
 <a class="twitter-timeline" data-width="400" data-height="510" data-theme="dark" href="https://twitter.com/NSVRC?ref_src=twsrc%5Etfw">Tweets by NSVRC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>		
@@ -90,11 +99,6 @@ Query
 <div id="barChart" style="height: 300px; width: 45%;"></div>    
 	<br><br><br>
 <div id="map"></div>
-    
-<!-- Replace the value of the key parameter with your own API key. -->
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAol_pyeX97HtDEaWpzuK1eyMXxkYBXsI&callback=initMap">
-</script>
 
 <div class="media">
   <div class="media-left media-middle">
@@ -123,7 +127,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAol_pyeX97HtDEaWpzuK1eyM
 		<p>Copyright 2017 by Wonjoon Seol</p>
 	<div class="content-wrap">
 </footer>
-
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD6KIdF4yzLXAMpRO6V1385tRrpDSDuQE&callback=initMap">
+</script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
