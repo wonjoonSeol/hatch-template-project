@@ -1,46 +1,89 @@
-var map;
-//urlString1,urlString2,urlString3,date
-function initMap(urlString1,urlString2,urlString3,date) {
-alert(urlString1);	
-  map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 2,
-    center: {lat: -33.865427, lng: 151.196123},
-    mapTypeId: 'terrain'
-  });
+//var map;
+////urlString1,urlString2,urlString3,date
+//function initMap(urlString1,urlString2,urlString3,date) {
+//  map = new google.maps.Map(document.getElementById('map'), {
+//    zoom: 2,
+//    center: {lat: -33.865427, lng: 151.196123},
+//    mapTypeId: 'terrain'
+//  });
+//
+//  // Create a <script> tag and set the USGS URL as the source.
+//  var script = document.createElement('script');
+////  script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';	
+//
+//  script.src = "https://data.police.uk/api/crimes-street/all-crime?poly="+urlString1+":"+urlString2+":"+urlString3+"&date="+date;
+//	
+//  document.getElementsByTagName('head')[0].appendChild(script);
+//
+//  map.data.setStyle(function(feature) {
+//    var magnitude = 5;
+//    return {
+//      icon: getCircle(magnitude)	
+//    };
+//  });
+//}
+//
+//// Draw red circles on Google Map
+//function getCircle(magnitude) {
+//  return {
+//    path: google.maps.SymbolPath.CIRCLE,
+//    fillColor: 'red',
+//    fillOpacity: .2,
+//    scale: Math.pow(2, magnitude) / 2,
+//    strokeColor: 'white',
+//    strokeWeight: .5
+//  };
+//}
+//
+//// Call geolocation json
+//function eqfeed_callback(results) {
+//  map.data.addGeoJson(results);
+//}
 
-  // Create a <script> tag and set the USGS URL as the source.
-  var script = document.createElement('script');
-//  script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';	
 
-  script.src = "https://data.police.uk/api/crimes-street/all-crime?poly="+urlString1+":"+urlString2+":"+urlString3+"&date="+date;
-	
-  document.getElementsByTagName('head')[0].appendChild(script);
+var map,heatmap;
+// this is the function to preview the map and the heatmap
+function initMap(array) {
+	var london = new google.maps.LatLng(51.5074, 0.1278);
 
-  map.data.setStyle(function(feature) {
-    var magnitude = 5;
-    return {
-      icon: getCircle(magnitude)	
-    };
-  });
+	map = new google.maps.Map(document.getElementById('map'), {
+	center: london,
+	zoom: 9,
+	mapTypeId: 'satellite'
+	});
+
+	if(array != null) {
+		// using data in getPoints() to generate heatmap
+		heatmap = new google.maps.visualization.HeatmapLayer({
+		data: array,
+		map: map
+		});
+	}
+}  
+
+function initURL(urlString1,urlString2,urlString3,date) {
+  var requestURL = "https://data.police.uk/api/crimes-street/all-crime?poly="+urlString1+":"+urlString2+":"+urlString3+"&date="+date;
+  var request = new XMLHttpRequest();
+  request.open('GET', requestURL);
+  request.responseType = 'json';
+  request.send();
+
+  request.onload = function() {
+	var jsonData = request.response;
+	storeRequiredData(jsonData);
+  }
+
+  function storeRequiredData(data){
+	var array = [];
+	for(i in data){ 
+	  if(data[i].category=="violent-crime"){
+		var x = new google.maps.LatLng(parseFloat(data[i].location.latitude),parseFloat(data[i].location.longitude));
+		array.push(x);
+	  }
+	}
+	initMap(array);
+  }
 }
-
-// Draw red circles on Google Map
-function getCircle(magnitude) {
-  return {
-    path: google.maps.SymbolPath.CIRCLE,
-    fillColor: 'red',
-    fillOpacity: .2,
-    scale: Math.pow(2, magnitude) / 2,
-    strokeColor: 'white',
-    strokeWeight: .5
-  };
-}
-
-// Call geolocation json
-function eqfeed_callback(results) {
-  map.data.addGeoJson(results);
-}
-
 
 // Draw Pie chart when webpage is created
 window.onload = function () {
@@ -77,7 +120,7 @@ var barChart = new CanvasJS.Chart("barChart", {
 	animationEnabled: true,
 	
 	title:{
-		text:"International sexual assualt status 2017"
+		text:"International lawsuit on sexual assault past 5 years"
 	},
 	axisX:{
 		interval: 1
@@ -85,7 +128,7 @@ var barChart = new CanvasJS.Chart("barChart", {
 	axisY2:{
 		interlacedColor: "rgba(1,77,101,.2)",
 		gridColor: "rgba(1,77,101,.1)",
-		title: "Sexual assults"
+		title: "Cost"
 	},
 	data: [{
 		type: "bar",
@@ -93,24 +136,14 @@ var barChart = new CanvasJS.Chart("barChart", {
 		axisYType: "secondary",
 		color: "#014D65",
 		dataPoints: [
-			{ y: 3, label: "Sweden" },
-			{ y: 7, label: "Taiwan" },
-			{ y: 5, label: "Russia" },
-			{ y: 9, label: "Spain" },
-			{ y: 7, label: "Brazil" },
-			{ y: 7, label: "India" },
-			{ y: 9, label: "Italy" },
-			{ y: 8, label: "Australia" },
-			{ y: 11, label: "Canada" },
-			{ y: 15, label: "South Korea" },
-			{ y: 12, label: "Netherlands" },
-			{ y: 15, label: "Switzerland" },
-			{ y: 25, label: "Britain" },
-			{ y: 28, label: "Germany" },
-			{ y: 29, label: "France" },
-			{ y: 52, label: "Japan" },
-			{ y: 103, label: "China" },
-			{ y: 134, label: "US" }
+		{ y: 39600000, label: "Ford Motor Co." },
+		{ y: 20000000, label: "UBER" },
+		{ y: 20000000, label: "Fox News" },
+		{ y: 17000000, label: "US Congress" },
+		{ y: 8439941, label: "UBS" },
+		{ y: 2300000, label: "Google" },
+		{ y: 192146, label: "University of London" },
+		{ y: 50000, label: "Vodafone" },
 		]
 	}]
 });
