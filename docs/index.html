@@ -46,7 +46,7 @@
 
     <div class="form-group">
       <div class="col-xs-2">
-        <label for="location-input1">Location1: "51.5438,-0.139"
+        <label for="location-input1">Location1: "51.5438,-0.1399"
 		 </label>
         <input type="text" class="form-control" id="location-input1">
       </div>
@@ -54,7 +54,7 @@
 		
     <div class="form-group">
       <div class="col-xs-2">
-        <label for="location-input2">Location2: "251.5016,-0.2133"</label>
+        <label for="location-input2">Location2: "51.5016,-0.2133"</label>
         <input type="text" class="form-control" id="location-input2">
       </div>
     </div> 
@@ -65,24 +65,24 @@
         <input type="text" class="form-control" id="location-input3">
       </div>
     </div>		
-
-    <p>Specify dates: "2016-1"</p>
 	
-	<div class="button-wrapper">
-		<div class="input-group">
-		  <input type="text" class="form-control" id="date" placeholder="yyyy-mm">
-		</div><!-- /input-group -->
-	</div>
+	<div class="form-group">
+		<div class="col-xs-2">
+
+		<label for="location-input3">Specify dates: "2016-1"</label>	
+	  <input type="text" class="form-control" id="date-input">
+		</div>
+	</div><!-- /input-group -->
 		
     <div class = "button-wrapper">
-    <button type="button" id="input" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off" onclick="initMap(document.getElementById('location-input1').value, document.getElementById('location-input2').value,document.getElementById('location-input3').value,date)">
+    <button type="button" id="input" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off" onclick="initURL(document.getElementById('location-input1').value, document.getElementById('location-input2').value, document.getElementById('location-input3').value, document.getElementById('date-input').value)">
     Query
     </button>
     </div>
 
 <!--    Add category tab-->
   
-	  <br><br>
+	  <br>
   <p>Upload your own <i>.csv</i> file : </p>
 		
   <div class = "upload">
