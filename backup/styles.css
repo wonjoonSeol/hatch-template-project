@@ -1,0 +1,91 @@
+main{
+/*	background-color: #DED8D8;*/
+    background-color: light;
+	}
+
+h1, h2 {
+	font-family: 'Caveat', cursive;
+	font-weight: 400;
+}
+
+footer {
+	text-align: center;
+	background-color: white;
+}
+
+.content-wrap {
+	max-width: 950px;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+.contact-info a {
+	padding: 10px;
+	display: inline-block;
+	color: #EF233C;
+}
+
+.contact-info a:hover {
+	text-decoration: none;
+}
+
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+ #map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+ }
+/*
+.scrollabletextbox {
+    height:227px;
+	width:280px;
+	overflow:scroll;
+}
+*/
+#pieChart {
+	display : inline-block;
+	margin-right: 50px;
+	margin-left: auto;
+	
+}
+
+#barChart {
+	display : inline-block;
+	margin-right: auto;
+	margin-left: auto;	
+}
+
+.button-wrapper {
+    width: 500px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.form-control {
+    margin-right: 100px;
+}
+
+.upload {
+	display: inline;
+	width: 20%;
+}
+
+.jumbotron {
+	margin : 0;
+}
+
+.jumbo-contents {
+	display : inline-block;
+	width : 67%;
+}
+
+.twitter {
+	display : inline;
+	float :right;
+	margin-right : -30px;
+	margin-top : -65px;
+}
+.gap {
+	margin-bottom : 80px;
+}

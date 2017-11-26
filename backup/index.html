@@ -38,87 +38,81 @@
 <main role="main">
 <div class="head-space"></div>
 <main role="main">
-
 <article role="article">
 
-  <div class="jumbotron">
-	<div class="jumbo-contents">
-    <h1 class="display-3"> Effective Interventions</h1>
-    <p class="lead">We allow you to compare how effective sexual harassment interventions were in relation to the state of the problem now.</p> <hr class="my-4">
-
-    <div class="form-group">
-      <div class="col-xs-2">
-        <label for="location-input">Location</label>
-        <input type="text" class="form-control" id="location-input">
-      </div>
-    </div>
-
-    <p>Specify dates:</p>
-	
-	<div class="button-wrapper">
-		<div class="input-group">
-		  <input type="text" class="form-control" placeholder="mm-yyyy">
-		</div><!-- /input-group -->
-	</div>
-		
-    <div class = "button-wrapper">
-    <button type="button" id="input" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
-    Query
-    </button>
-    </div>
-
-<!--    Add category tab-->
-  
-	  <br><br>
-  <p>Upload your own <i>.csv</i> file : </p>
-		
-  <div class = "upload">
-	<input type="text" class="form-control" placeholder="File url : ">
-  </div>
-		
-  <div class="button-wrapper">
-	  <button class="btn btn-primary" id="upload" type="button">Upload</button>
-  </div>		
-		
-</div>		
-		
-		
-<div class = "twitter" >
-<a class="twitter-timeline" data-width="400" data-height="513" data-theme="dark" href="https://twitter.com/NSVRC?ref_src=twsrc%5Etfw">Tweets by NSVRC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>		
-</div>	
+<div class="jumbotron">
+<div class="jumbo-contents">
+  <h1 class="display-3"> Effective Interventions</h1>
+  <p class="lead">This website allows comparison of your provided data and national crime statistics to see whether policy is effective in regions in UK</p> <hr class="my-4">
+  <p>Specify dates : </p>
+    
+<div class = "button-wrapper">
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Start</span>
+  <input type="text" class="form-control" placeholder="yyyy-mm" aria-describedby="basic-addon1">
+</div>
+</div>
+<div class = "button-wrapper">
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon2">End</span>
+  <input type="text" class="form-control" placeholder="yyyy-mm" aria-describedby="basic-addon1">    
+</div>    
 </div>
 
-<br><Br><br>
+<div class = "button-wrapper">
+<button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+Query
+</button>    
+</div>
+	
+<!--    Add category tab-->
+
+<br><br>
+<p>Upload your own <i>.csv</i> file : </p>
+<div class = "upload">
+    <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="File url : ">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Upload</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div>	
+</div>
+	
+<div class = "twitter" >
+<a class="twitter-timeline" data-width="400" data-height="510" data-theme="dark" href="https://twitter.com/NSVRC?ref_src=twsrc%5Etfw">Tweets by NSVRC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>		
+</div>	
+	
+</div>
+
+<div class = "gap"></div>
 	
 <div id="pieChart" style="height: 300px; width: 45%;"></div>    
-<div id="barChart" style="height: 300px; width: 45%;"></div>    
-	<br><br><br>
-
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD6KIdF4yzLXAMpRO6V1385tRrpDSDuQE&callback=initMap">
-    </script>
-
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
-    <script type="text/javascript">
-        google.load("search", "1");
-        google.load("jquery", "1.4.2");
-        google.load("jqueryui", "1.7.2");
-    </script>
+<div id="barChart" style="height: 300px; width: 45%;"></div>
 	
+<div class = "gap"></div>
 	
-<!--
+<div id="map"></div>
+    
+<!-- Replace the value of the key parameter with your own API key. -->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAol_pyeX97HtDEaWpzuK1eyMXxkYBXsI&callback=initMap">
+</script>
+
 <div class="media">
   <div class="media-left media-middle">
     <a href="#">
-      <img class="media-object" src="..." alt="...">
+<!--      <img class="media-object" src="..." alt="...">-->
     </a>
   </div>
   <div class="media-body">
     <h4 class="media-heading">Middle aligned media</h4>
   </div>
-	</div>
--->
+</div>	
+
+<div id="dataTable"></div>
 
 </article>
 </main>
@@ -129,15 +123,13 @@
 		<h2> Contact info </h2>
 		<div class="contact-info">
 		<a href="mailto:wonjoon.ad@gmail.com">wonjoon.ad@gmail.com</a>
-		<a href="www.google.com">GitHub</a>
-		<a href="www.google.com">LinkedIn</a>
+		<a href="https://github.com/wonjoonSeol">GitHub</a>
+		<a href="https://www.linkedin.com/in/wonjoonseol/">LinkedIn</a>
 		</div>
 		<p>Copyright 2017 by Wonjoon Seol</p>
 	<div class="content-wrap">
 </footer>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7W7i0npzJsm1j93ecGgbsKNquQaQlcFg&callback=initMap">
-</script>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>

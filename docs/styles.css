@@ -59,32 +59,40 @@ footer {
 	display : inline-block;
 }
 
+.jumbotron {
+	margin : 0;
+	width : 100%;
+	padding-top: 47px;
+	padding-bottom: 47px;
+	background-color: #e1e1f5;
+}
+
+.jumbo-contents {
+	display : inline-block;
+	width : 67%;
+}
+
 .button-wrapper {
-    width: 200px;
+    width: 160px;
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 0px;
 }
 
 .upload {
-    margin-left : -15px;
+	width: 60%;
+	display: inline-block;
 }
 
-.jumbotron {
-	width : 68%;
-	display : inline-block;
-	margin : 0;
-}
 .twitter {
 	display : inline-block;
 	float : right;
+	margin-right : -30px;
+	margin-top : -3.7%;	
 }
+
 
 .gap {
 	margin-bottom: 150px;
-}
-
-#location-selector {
-	margin: 2% 0 5% 20%;
 }
 
 .display-3 {
@@ -96,13 +104,4 @@ footer {
 .introduction {
 	font-family: Lato;
 	font-size: 1.6vw;
-
-}
-
-#time-input {
-	margin: 1% 0 3% 0;
-}
-
-.jumbotron {
-	background-color: #e1e1f5;
 }
