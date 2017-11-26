@@ -4,16 +4,41 @@
 <html>
 
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD6KIdF4yzLXAMpRO6V1385tRrpDSDuQE&callback=initMap">
+    </script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script type="text/javascript">
+        google.load("search", "1");
+        google.load("jquery", "1.4.2");
+        google.load("jqueryui", "1.7.2");
+    </script>
+
+</head>
+<body>
 <script>
 //creating the variables to store all the parameters needed for the Get() method   
 var urlString1 = "51.5438,-0.1399";
 var urlString2 = "51.5016,-0.2133";
 var urlString3 = "51.5,-0.0583";
 var date = "2016-1";
-  
-$(document).ready(function(){
-  $.ajax({
+
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: {lat: 40.72, lng: -73.96}
+    });
+    var geocoder = new google.maps.Geocoder();
+
+    setTimeout( function() {
+        var fro = getLatLng(geocoder,'London');
+        var me = new google.maps.LatLng(fro);
+        console.log(me); }, 5000);
+    });
+}
+/*  $.ajax({
     type:"get",
     //avoid hardcoding the URL since we need more options from the Longitude, Latitude and Date
     url:"https://data.police.uk/api/crimes-street/all-crime?poly="+urlString1+":"+urlString2+":"+urlString3+"&date="+date,
@@ -32,17 +57,36 @@ $(document).ready(function(){
     	$("#list").html(result);
     }
     }
-  });
-});
-</script>
-</head>
+  });*/
 
-<body>
+
+
+function getLatLng(geocoder, address) {
+
+    geocoder.geocode({'address': address}, function(results, status) {
+
+        if (status === 'OK') {
+
+            if (results[0].geometry.location) {
+                //console.log(results[0].geometry.region);
+                return results[0].geometry.location.lat();
+            }
+            else {
+                console.log("Couldn't properly convert");
+            }
+        } else {
+            console.log('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+}
+</script>
+
+
+
 
 <div id="list">
 
 </div>
-
 
 </body>
 </html>
